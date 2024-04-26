@@ -3,21 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="image/icons8-camera-32.png" type="image/x-icon">
     <title>Access Webcam</title>
+    <link rel="stylesheet" href="style.css">
     <script
       type="text/javascript"
       src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"
     ></script>
+    <script src="app.js" defer></script>
     <style>
       a {
         padding: 10px;
         background-color: orange;
-        color: white;
+        /* color: white; */
+        font-size: 40px;
         text-decoration: none;
         cursor: pointer;
-      }
-      canvas{
-        display: none;
       }
     </style>
   </head>
@@ -31,16 +32,6 @@
       height="600"
     ></video>
     <canvas id="canvas"></canvas>
-    <a download onClick="takeAPicture()">SNAP</a>
-    <script>
-      const webCamElement = document.getElementById("webCam");
-      const canvasElement = document.getElementById("canvas");
-      const webcam = new Webcam(webCamElement, "user", canvasElement);
-      webcam.start();
-      function takeAPicture(){
-        let picture = webcam.snap();
-        document.querySelector("a").herf = picture 
-      }
-    </script>
+    <a download  id="snap">SNAP</a>
   </body>
 </html>
